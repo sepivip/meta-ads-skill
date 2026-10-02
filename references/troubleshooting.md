@@ -63,9 +63,9 @@ Two real fixes:
 | Ads stuck "In Review" | Normal for minutes–hours (sometimes 24h). Rejections come with a reason; edit and resubmit |
 | `is_queryable: false` on the account | Insights tools won't work for it; surface `not_queryable_reason` |
 
-## Georgia-specific notes
+## Market & language notes
 
-- New Georgian business portfolios frequently trip the preemptive advertising restriction — budget a day for the accountquality review before the first launch.
-- Account currency is fixed at creation (USD and GEL both common). All budget integers are cents of THAT currency.
-- Georgian script needs no special handling in MCP params (UTF-8 end-to-end). If scripting via CLI on Windows instead, pass Georgian text via UTF-8 script files, not shell arguments — the cmd→WSL boundary can mangle it.
-- Geo radius targeting reaches people physically in the area, not "Georgians" — for Georgian speakers abroad or nationwide, discuss `countries:["GE"]` and language expectations with the user explicitly.
+- New or unverified business portfolios frequently trip the preemptive advertising restriction — budget a day for the accountquality review before the first launch.
+- Account currency is fixed at creation and is often not the user's local currency. All budget integers are cents of THAT currency.
+- Non-Latin scripts (Georgian, Arabic, Cyrillic, CJK, …) need no special handling in MCP params (UTF-8 end-to-end). If scripting via CLI on Windows instead, pass non-ASCII text via UTF-8 script files, not shell arguments — the cmd→WSL boundary can mangle it.
+- Geo targeting reaches people physically in the area, not a nationality or language group — when the user means "speakers of X" (at home or abroad), discuss country choice and language expectations with them explicitly.

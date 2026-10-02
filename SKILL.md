@@ -1,6 +1,6 @@
 ---
 name: meta-ads
-description: Use when creating, launching, monitoring, or troubleshooting Meta (Facebook/Instagram) ad campaigns through the Meta Ads MCP server (mcp.facebook.com/ads) or Meta's Ads CLI — campaigns, ad sets, creatives, ads, budgets, insights queries, Georgia/Tbilisi targeting, Georgian-language ads, and errors like "socket connection was closed", INTERNAL create failures, "app that is in development mode", "No permissions available" during token generation, or "prohibited from advertising".
+description: Use when creating, launching, monitoring, or troubleshooting Meta (Facebook/Instagram) ad campaigns through the Meta Ads MCP server (mcp.facebook.com/ads) or Meta's Ads CLI — campaigns, ad sets, creatives, ads, budgets, insights queries, location and radius targeting, ad copy in any language, and errors like "socket connection was closed", INTERNAL create failures, "app that is in development mode", "No permissions available" during token generation, or "prohibited from advertising".
 ---
 
 # Meta Ads (MCP-first)
@@ -37,13 +37,13 @@ Everything creates PAUSED by default — that's the safety model. Build the whol
 
 Metrics require `date_preset` (or `time_range`). Field names: `name` (not `ad_name`), `amount_spent` (not `spend`), link clicks = `actions:link_click`, cost = `cost_per_link_click` — bare `actions` is invalid. Sort = `<field>_descending`. Full list: [references/tool-contracts.md](references/tool-contracts.md).
 
-## Georgia quick recipes
+## Targeting quick recipes
 
-Tbilisi radius (no city-key lookup needed):
+Radius around any point (no city-key lookup needed — the MCP has no targeting-search tool):
 ```json
-{"geo_locations":{"custom_locations":[{"latitude":41.7151,"longitude":44.8271,"radius":25,"distance_unit":"kilometer"}]},"age_min":18,"age_max":55}
+{"geo_locations":{"custom_locations":[{"latitude":51.5074,"longitude":-0.1278,"radius":25,"distance_unit":"kilometer"}]},"age_min":18,"age_max":55}
 ```
-All of Georgia: `{"geo_locations":{"countries":["GE"]}}`. Georgian text in `message`/`headline` is plain UTF-8 — works as-is. Budget is in the ad account's fixed currency (check `currency` on step 1; "$100" in a GEL account is a conversion conversation, not a relabel).
+`distance_unit` is `kilometer` or `mile`. Whole country: `{"geo_locations":{"countries":["GB"]}}` (ISO country codes). Ad copy in any language or script in `message`/`headline` is plain UTF-8 — works as-is. Budget is in the ad account's fixed currency (check `currency` on step 1; "$100" in a EUR account is a conversion conversation, not a relabel).
 
 ## Errors — first aid
 

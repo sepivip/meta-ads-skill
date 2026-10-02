@@ -37,7 +37,7 @@ Required: `ad_account_id`, `campaign_id`, `ad_set_name`, `billing_event`,
 - Budget: ONLY in ABO mode (parent campaign has no budget). `lifetime_budget` requires `end_time`. Under a CBO parent, passing any budget/bid field here is rejected ("Must Use Campaign Bid Strategy" class of errors).
 - Even under CBO with a lifetime budget, give the ad set `start_time`/`end_time` matching the flight.
 - **Advantage+ Audience is ON by default**: `age_min`/`age_max` become suggestions, not caps. For hard caps include `"targeting_automation":{"advantage_audience":0}` in the targeting JSON.
-- EU note: if `geo_locations.countries` includes an EU country, DSA fields apply (auto-filled from the business name; override with `dsa_beneficiary`/`dsa_payor`). Georgia is not EU — not needed for GE.
+- EU note: if `geo_locations.countries` includes an EU country, DSA fields apply (auto-filled from the business name; override with `dsa_beneficiary`/`dsa_payor`). Non-EU targeting (e.g. US, GB) doesn't need them.
 
 ### objective → allowed optimization_goal (default first)
 
