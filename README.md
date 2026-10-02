@@ -24,6 +24,10 @@ in Tbilisi 🇬🇪 and battle-tested against every wall Meta put up along the w
 
    (Windows: `git clone https://github.com/sepivip/meta-ads-skill "$env:USERPROFILE\.claude\skills\meta-ads"`)
 
+   Downloaded the ZIP instead (e.g. from Agensi)? Unzip it into your skills
+   directory so the folder lands at `~/.claude/skills/meta-ads/` — the folder
+   name must stay `meta-ads`.
+
 2. **The MCP server** — register and authenticate (one time, interactive):
 
    ```bash
@@ -41,6 +45,15 @@ in Tbilisi 🇬🇪 and battle-tested against every wall Meta put up along the w
 - Everything is created PAUSED; nothing spends until you explicitly approve activation.
 - Prefer **lifetime budgets** for tests — a structural spend cap, not a promise.
 - Claude checks your account has a payment method and MCP access before building anything.
+
+## Network access
+
+The skill is instructions only — no scripts, and it makes no network calls of
+its own. It teaches Claude to use Meta's official Ads MCP server
+(`https://mcp.facebook.com/ads`), which you connect and authenticate yourself
+with your Facebook login. The optional headless fallback, Meta's official Ads
+CLI (`pip install meta-ads`), talks to the Meta Marketing API with a token you
+keep in a local `.env`. The skill sends nothing anywhere else.
 
 ## Requirements
 

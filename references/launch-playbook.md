@@ -22,7 +22,7 @@ after launch.
 ```json
 {
   "ad_account_id": "1234567890",
-  "campaign_name": "OnlyFoods - Tbilisi Traffic Launch",
+  "campaign_name": "Example Bakery - Tbilisi Traffic Launch",
   "objective": "OUTCOME_TRAFFIC",
   "buying_type": "AUCTION",
   "campaign_lifetime_budget": 10000,
@@ -63,11 +63,11 @@ cheapest possible creative test. Only split ad sets when audiences differ.
 {
   "ad_account_id": "1234567890",
   "page_id": "111222333444555",
-  "name": "Feed 1 - Find your dish",
+  "name": "Feed 1 - Fresh bread",
   "image_hash": "<from ads_get_ad_images / upload>",
-  "link_url": "https://onlyfoods.ge/ka?utm_source=facebook&utm_medium=paid&utm_campaign=tbilisi-launch-jul26&utm_content=feed-1",
-  "message": "გაიგე სად მზადდება შენი საყვარელი კერძი საუკეთესოდ.",
-  "headline": "იპოვე შენი კერძი",
+  "link_url": "https://example.com/ka?utm_source=facebook&utm_medium=paid&utm_campaign=tbilisi-launch&utm_content=feed-1",
+  "message": "ყოველ დილით ახალგამომცხვარი პური და ნამცხვრები.",
+  "headline": "ცხელი პური ყოველ დილით",
   "call_to_action_type": "LEARN_MORE"
 }
 ```
@@ -83,7 +83,7 @@ cheapest possible creative test. Only split ad sets when audiences differ.
 {
   "ad_account_id": "1234567890",
   "ad_set_id": "<from step 2>",
-  "ad_name": "Feed 1 - Find your dish",
+  "ad_name": "Feed 1 - Fresh bread",
   "creative": "{\"creative_id\":\"<from step 3>\"}"
 }
 ```
