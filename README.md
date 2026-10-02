@@ -14,17 +14,17 @@ and battle-tested against every wall Meta put up along the way.
 
 ## Install
 
-1. **The skill** — copy this folder into your Claude Code skills directory:
+1. **The skill** — put the `meta-ads` folder in your skills directory, so
+   `SKILL.md` ends up at `~/.claude/skills/meta-ads/SKILL.md`
+   (Windows: `%USERPROFILE%\.claude\skills\meta-ads\SKILL.md`). Keep the
+   folder name `meta-ads`.
 
-   ```bash
-   git clone https://github.com/sepivip/meta-ads-skill ~/.claude/skills/meta-ads
-   ```
+   - **From the ZIP** (e.g. Agensi): unzip it into `~/.claude/skills/`.
+   - **From git:**
 
-   (Windows: `git clone https://github.com/sepivip/meta-ads-skill "$env:USERPROFILE\.claude\skills\meta-ads"`)
-
-   Downloaded the ZIP instead (e.g. from Agensi)? Unzip it into your skills
-   directory so the folder lands at `~/.claude/skills/meta-ads/` — the folder
-   name must stay `meta-ads`.
+     ```bash
+     git clone https://github.com/sepivip/meta-ads-skill ~/.claude/skills/meta-ads
+     ```
 
 2. **The MCP server** — register and authenticate (one time, interactive):
 
@@ -37,6 +37,16 @@ and battle-tested against every wall Meta put up along the way.
 
 3. Ask Claude to launch a campaign. It will build everything **paused**, show
    you previews, and activate only when you say go.
+
+## Try it
+
+Paste one of these into Claude after setup:
+
+- *"Check my Meta ad accounts — which ones are ready to run ads?"*
+- *"Launch a traffic campaign for https://example.com: $100 total over 2 weeks, 25 km around our shop, ages 25–55, these 3 image URLs and headlines. Show me previews before anything goes live."*
+- *"How are my ads doing this week? Rank them by spend and tell me which creative is winning."*
+- *"Pause the worst-performing ad in my launch campaign."*
+- *"Meta says my business is prohibited from advertising — what do I do?"*
 
 ## Safety model
 
